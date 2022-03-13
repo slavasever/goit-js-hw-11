@@ -22,6 +22,5 @@ export default function renderMarkup(arrayOfPictures, elem) {
 </li>`;
     })
     .join('');
-
   elem.insertAdjacentHTML('beforeend', markup);
 }
