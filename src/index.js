@@ -11,8 +11,8 @@ const refs = {
   gallery: document.querySelector('.gallery'),
   loadMoreBtn: document.querySelector('.load-more'),
 };
-let page = 1;
-let query = '';
+let page = null;
+let query = null;
 const lightbox = new SimpleLightbox('.gallery a', { captionDelay: 250 });
 
 refs.form.addEventListener('submit', handleSubmit);
@@ -30,6 +30,7 @@ async function handleSubmit(evt) {
     if (query === '') return;
 
     refs.gallery.innerHTML = '';
+    page = 1;
 
     const response = await getPictures(query, page);
     const pictures = response.data.hits;
