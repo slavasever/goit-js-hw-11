@@ -75,3 +75,11 @@ async function handleLoadMore() {
     Notify.failure(`${error.message}`);
   }
 }
+
+// Паттерн для "безкінечного скролу"
+
+// window.addEventListener('scroll', () => {
+//   if (window.scrollY + window.innerHeight >= document.documentElement.scrollHeight) {
+//     handleLoadMore();
+//   }
+// });
